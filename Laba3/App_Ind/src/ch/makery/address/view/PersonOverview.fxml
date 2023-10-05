@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <SplitPane layoutX="0.0" layoutY="0.0" prefHeight="600.0" prefWidth="900.0">
+         <items>
+                <!-- Таблица для отображения операций -->
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="250.0">
+                    <children>
+                        <TableView layoutX="484.0" prefHeight="598.0" prefWidth="413.0">
+                            <!-- Колонки для операций -->
+                            <columns>
+                                <TableColumn text="ID" />
+                                <TableColumn text="DealID" />
+                                <TableColumn text="SubAccountID" />
+                                <TableColumn text="Date" />
+                                <TableColumn text="Type" />
+                            </columns>
+                        </TableView>
+      
+                            <!-- Форма для редактирования операции -->
+                      <AnchorPane layoutX="48.0" layoutY="7.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="300.0">
+                          <children>
+                              <TextField layoutX="171.0" layoutY="50.0" promptText="ID" />
+                              <TextField layoutX="172.0" layoutY="80.0" promptText="DealID" />
+                              <TextField layoutX="172.0" layoutY="110.0" promptText="SubAccountID" />
+                              <Label layoutX="38.0" layoutY="89.0" text="Operation Details" />
+                          </children>
+                      </AnchorPane>
+                        <!-- Добавьте другие элементы управления для ввода данных операции -->
+                        <ButtonBar AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="419.0">
+                            <buttons>
+                                <Button text="Edit..." />
+                                <Button text="Delete" />
+                                <Button text="New..." />
+                            </buttons>
+                        </ButtonBar>
+                    </children>
+                </AnchorPane>
+         </items></SplitPane>
+    </children>
+</AnchorPane>
