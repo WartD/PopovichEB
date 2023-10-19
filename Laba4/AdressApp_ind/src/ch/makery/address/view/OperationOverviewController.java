@@ -1,4 +1,5 @@
 package ch.makery.address.view;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -12,16 +13,11 @@ public class OperationOverviewController {
     @FXML
     private TableColumn<Operation, Integer> idColumn;
     @FXML
-    private TableColumn<Operation, Integer> dealIdColumn;
-
+    private TableColumn<Operation, Integer> transactionNumberColumn;
     @FXML
     private Label idLabel;
     @FXML
-    private Label dealIdLabel;
-    @FXML
-    private Label subAccountIdLabel;
-    @FXML
-    private Label numberLabel;
+    private Label transactionNumberLabel;
     @FXML
     private Label dateLabel;
     @FXML
@@ -29,9 +25,9 @@ public class OperationOverviewController {
     @FXML
     private Label sumLabel;
     @FXML
-    private Label saldoInputLabel;
+    private Label inputBalanceLabel;
     @FXML
-    private Label saldoOutputLabel;
+    private Label outputBalanceLabel;
 
     private MainApp mainApp;
 
@@ -41,8 +37,7 @@ public class OperationOverviewController {
     @FXML
     private void initialize() {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
-        dealIdColumn.setCellValueFactory(cellData -> cellData.getValue().dealIdProperty().asObject());
-
+        transactionNumberColumn.setCellValueFactory(cellData -> cellData.getValue().numberProperty().asObject());
 
         // Add listeners to show operation details when selected
         operationTable.getSelectionModel().selectedItemProperty().addListener(
@@ -52,19 +47,25 @@ public class OperationOverviewController {
     private void showOperationDetails(Operation operation) {
         if (operation != null) {
             idLabel.setText(Integer.toString(operation.getId()));
-            dealIdLabel.setText(Integer.toString(operation.getDealId()));
-            // Добавьте остальные поля операции
-
+            transactionNumberLabel.setText(Integer.toString(operation.getNumber()));
+            dateLabel.setText(operation.getDate().toString());
+            typeLabel.setText(operation.getType());
+            sumLabel.setText(Double.toString(operation.getSum()));
+            inputBalanceLabel.setText(Double.toString(operation.getSaldoInput()));
+            outputBalanceLabel.setText(Double.toString(operation.getSaldoOutput()));
         } else {
             idLabel.setText("");
-            dealIdLabel.setText("");
-            // Очистите остальные поля
+            transactionNumberLabel.setText("");
+            dateLabel.setText("");
+            typeLabel.setText("");
+            sumLabel.setText("");
+            inputBalanceLabel.setText("");
+            outputBalanceLabel.setText("");
         }
     }
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
-
         operationTable.setItems(mainApp.getOperationData());
     }
 }
