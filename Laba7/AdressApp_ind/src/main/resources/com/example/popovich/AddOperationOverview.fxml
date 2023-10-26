@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="613.0" styleClass="background" stylesheets="@Theme.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.popovich.AddOperationController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="613.0" text="Добавление операции">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="614.0">
+            <children>
+                <Label prefHeight="19.0" prefWidth="170.0" text="№" />
+                <TextField fx:id="text_num" alignment="CENTER" prefHeight="27.0" prefWidth="250.0" promptText="Введите номер операции" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="614.0">
+            <children>
+                <Label prefHeight="19.0" prefWidth="170.0" text="Дата: " />
+                <TextField fx:id="text_date" alignment="CENTER" prefHeight="27.0" prefWidth="250.0" promptText="Введите дату операции" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="45.0" prefHeight="51.0" prefWidth="614.0">
+            <children>
+                <Label prefHeight="19.0" prefWidth="170.0" text="Сумма: " />
+                <TextField fx:id="text_sum" alignment="CENTER" prefHeight="27.0" prefWidth="250.0" promptText="Введите сумму операции" />
+            </children>
+        </HBox>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="614.0">
+         <children>
+            <Label prefHeight="22.0" prefWidth="170.0" text="Тип: " />
+            <TextField fx:id="text_type" alignment="CENTER" prefHeight="27.0" prefWidth="250.0" promptText="Введите тип транзакции" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="51.0" prefWidth="614.0">
+         <children>
+            <Label prefHeight="22.0" prefWidth="170.0" text="Сальдо начальное: " />
+            <TextField fx:id="text_input" alignment="CENTER" prefHeight="27.0" prefWidth="250.0" promptText="Введите сальдо начальное" />
+         </children>
+      </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="97.0" prefHeight="51.0" prefWidth="614.0">
+            <children>
+                <Label prefHeight="22.0" prefWidth="170.0" text="Сальдо конечное: " />
+                <TextField fx:id="text_output" alignment="CENTER" prefHeight="27.0" prefWidth="250.0" promptText="Введите сальдо конечное" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="251.0" prefHeight="51.0" prefWidth="614.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#add" prefHeight="33.0" prefWidth="150.0" text="Добавить">
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#cancel" prefHeight="33.0" prefWidth="150.0" text="Отмена">
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin></Button>
+            </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+        </HBox>
+    </children>
+</VBox>
